@@ -5,6 +5,7 @@
         <div class="main-panel">
           <div class="content">
             <component :is="loadComponent" :data="componentData" />
+
           </div>
         </div>
     </div>
@@ -14,16 +15,18 @@
 
 <script>
 import Home from '../Home/Home';
+import List from '../Contacts/List';
 
 const componentDicionary = {
   home: Home,
+  list: List,
 };
 
 export default {
   name: 'Main',
 
   components: {
-    Home
+    Home, List
   },
 
   props: {

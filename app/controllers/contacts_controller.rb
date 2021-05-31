@@ -1,6 +1,10 @@
 class ContactsController < ApplicationController
     def index
-        @contacts = Contact.all
+        @contacts = Contact.all.map{|contact| contact.as_json}
+        @props = {
+            component_name: 'list',
+            component_data:  @contacts
+        }
     end
 
     def show
