@@ -16,17 +16,19 @@
 <script>
 import Home from '../Home/Home';
 import List from '../Contacts/List';
+import ContactsForm from '../Contacts/ContactsForm';
 
 const componentDicionary = {
   home: Home,
   list: List,
+  contacts_form: ContactsForm,
 };
 
 export default {
   name: 'Main',
 
   components: {
-    Home, List
+    Home, List, ContactsForm
   },
 
   props: {

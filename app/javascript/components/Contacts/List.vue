@@ -5,7 +5,6 @@
                 {{ contact.name }}
                 <ol>
                     {{contact.email}}
-                    {{contact.phone}}
                 </ol>
             </li>
         </ul>
