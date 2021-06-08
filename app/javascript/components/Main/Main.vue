@@ -17,18 +17,26 @@
 import Home from '../Home/Home';
 import List from '../Contacts/List';
 import ContactsForm from '../Contacts/ContactsForm';
+import ShowContact from '../Contacts/ShowContact';
+import UpdateContact from '../Contacts/UpdateContact';
+import Login from '../Users/Login';
+import CreateUser from '../Users/CreateUser';
 
 const componentDicionary = {
   home: Home,
   list: List,
   contacts_form: ContactsForm,
+  show_contact: ShowContact,
+  update_contact: UpdateContact,
+  login: Login,
+  create_user: CreateUser,
 };
 
 export default {
   name: 'Main',
 
   components: {
-    Home, List, ContactsForm
+    Home, List, ContactsForm, ShowContact, UpdateContact, Login, CreateUser
   },
 
   props: {

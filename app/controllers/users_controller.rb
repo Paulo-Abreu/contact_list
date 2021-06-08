@@ -1,7 +1,21 @@
 class UsersController < ApplicationController
     before_action :view_user, only: %i[ show ]
-    def new
-        @user = User.new
+
+    def new       
+    end
+
+    def create
+        @props = {
+            component_name: 'create_user',
+            component_data:  @user
+        } 
+    end
+
+    def login
+        @props = {
+            component_name: 'login',
+            component_data:  @users
+        }        
     end
 
     def show
@@ -12,7 +26,7 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:name, :email, :birth_date, :gender)
+        params.require(:user).permit(:email, :password, :name)
     end
     def view_user
         @user = User.find(params[:id])

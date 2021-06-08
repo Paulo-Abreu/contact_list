@@ -10,11 +10,20 @@ module Api::V1
         end
               
         def update 
+            @contact = Contact.find(params[:id])
+            if @contact.update(contact_params)
+                render json: @contact, status: 201
+            else
+                render json: @contact.errors.messages, status:422
+            end
         end
 
         private
         def contact_params
-            params.require(:contact).permit(:name, :email, :user_id)
+            params.require(:contact).permit(:name, :email, :user_id, :details)
+        end
+        def view_contact
+            @contact = Contact.find(params[:id])
         end
     end
 end

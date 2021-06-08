@@ -1,7 +1,7 @@
 <template>
-    <div>
+     <div>
        <form name="login">  
-            <table id="create_form">    
+            <table id="update_form">    
                 <tr>       
                     <th colspan="2">Formulario de Criar Contato</th>
                 </tr>
@@ -27,22 +27,21 @@
                     <td><input name="text" type="text" v-model="newObject.details"></td>    
                 </tr> 
 
-                <button id="btn" @click="submitForm()">Criar Contato!</button><br><br>
+                <button id="btn" @click="submitForm(newObject.id)">Edit Contato!</button><br><br>
                 <button id="btn" @click="ShowList">Back</button>
             </table><br>
         </form>
     </div>
-
 </template>
-
 <script>
 import axios from 'axios';
     export default{
-        name: 'ContactsForm',
+        name: 'UpdateContact',
 
         data(){
             return{
                 newObject: {
+                    id:'',
                     name: '',
                     email: '',
                     user_id: '',
@@ -56,9 +55,19 @@ import axios from 'axios';
                 type: Array
             } 
         },
+        mounted(){
+            console.log('aqui',this.data)
+            this.newObject.id = this.data[0].id
+            this.newObject.name = this.data[0].name
+            this.newObject.email = this.data[0].email
+            this.newObject.user_id = this.data[0].user_id
+            this.newObject.details = this.data[0].details
+
+
+        },
         methods: {
-            submitForm: function (event) {
-                axios.post('/api/v1/contacts', {contact: this.newObject})
+            submitForm: function (id) {
+                axios.patch('/api/v1/contacts/' + id, {contact: this.newObject})
                 .then(response => {window.location = '/contacts', console.log(response) })
             },
             ShowList: function (event) {
@@ -69,7 +78,7 @@ import axios from 'axios';
 </script>
 
 <style>
-    #create_form {	
+    #update_form {	
         background:#4f4f4f;	
         font:12px arial, verdana, helvetica, sans-serif;	
         border-top:8px solid #cfcfcf;
@@ -79,16 +88,16 @@ import axios from 'axios';
         border-collapse:collapse;
         color:#ff9900;	
     }
-    #create_form th {
+    #update_form th {
         background:#000000;
         padding:3px;
         font: bold 15px arial, verdana, helvetica, sans-serif;	
         border-bottom:1px solid #ff9900;	
     }
-    #create_form td {	
+    #update_form td {	
         padding:3px;	
     }
-    #login_form input {	
+    #update_form input {	
         background:#b5b5b5;	
         border:1px dashed #ff9900;	
     }
