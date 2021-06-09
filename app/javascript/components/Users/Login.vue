@@ -54,14 +54,18 @@
 
 <style>
 #login_form {	
-    background:#4f4f4f;	
-    font:12px arial, verdana, helvetica, sans-serif;	
-    border-top:8px solid #cfcfcf;
-    border-left:8px solid #cfcfcf;	
-    border-right:8px solid #696969;
-    border-bottom:8px solid #696969;
-    border-collapse:collapse;
-    color:#ff9900;	
+        background:#4f4f4f;	
+        font:12px arial, verdana, helvetica, sans-serif;	
+        border-top:8px solid #cfcfcf;
+        border-left:8px solid #cfcfcf;	
+        border-right:8px solid #696969;
+        border-bottom:8px solid #696969;
+        border-collapse:collapse;
+        color:#ff9900;	
+        width: 400px;
+        height: 10px;
+        align-items: center;
+        margin: auto;
 }
 #login_form th {
     background:#000000;

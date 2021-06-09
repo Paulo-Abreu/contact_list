@@ -1,5 +1,5 @@
 <template>
-     <div>
+     <div id="update">
        <form name="login">  
             <table id="update_form">    
                 <tr>       
@@ -28,7 +28,7 @@
                 </tr> 
 
                 <button id="btn" @click="submitForm(newObject.id)">Edit Contato!</button><br><br>
-                <button id="btn" @click="ShowList">Back</button>
+                <button id="btn" @click="showList()">Back</button>
             </table><br>
         </form>
     </div>
@@ -70,7 +70,7 @@ import axios from 'axios';
                 axios.patch('/api/v1/contacts/' + id, {contact: this.newObject})
                 .then(response => {window.location = '/contacts', console.log(response) })
             },
-            ShowList: function (event) {
+            showList: function (event) {
                 window.location = '/contacts'
             } 
         },
@@ -87,6 +87,10 @@ import axios from 'axios';
         border-bottom:8px solid #696969;
         border-collapse:collapse;
         color:#ff9900;	
+        width: 400px;
+        height: 10px;
+        align-items: center;
+        margin: auto;
     }
     #update_form th {
         background:#000000;
@@ -95,6 +99,8 @@ import axios from 'axios';
         border-bottom:1px solid #ff9900;	
     }
     #update_form td {	
+        align-items: center;
+        margin: auto;
         padding:3px;	
     }
     #update_form input {	

@@ -69,6 +69,10 @@ export default{
         border-bottom:8px solid #696969;
         border-collapse:collapse;
         color:#ff9900;	
+        width: 400px;
+        height: 10px;
+        align-items: center;
+        margin: auto;
     }
     #create_form th {
         background:#000000;
