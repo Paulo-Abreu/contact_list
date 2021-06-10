@@ -4,8 +4,22 @@
     <div class="dashboard">
         <div class="main-panel">
           <div class="content">
+            <header>
+              <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div id="navbarBasicExample" class="navbar-menu">
+                  <div class="navbar-end">
+                    <div class="navbar-item">
+                      <div class="buttons">
+                        <a class="button is-danger">
+                          <strong>Log out</strong>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+            </header>
             <component :is="loadComponent" :data="componentData" />
-
           </div>
         </div>
     </div>
@@ -58,5 +72,27 @@ export default {
 </script>
 
 <style>
-
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.main-panel {
+    position: relative;
+    float: right;
+    width: calc(100% - 260px);
+    transition: .33s,cubic-bezier(.685,.0473,.346,1);
+  }
+  .content {
+    width: 100%;
+    /* padding-right: 15px; */
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .main-panel>.content {
+    margin-top: 80px;
+    padding: 30px 15px;
+    min-height: calc(100vh - 123px);
+}
 </style>

@@ -1,42 +1,42 @@
 <template>
     <div>
-       <form name="login">  
-            <table id="create_form">    
-                <tr>       
-                    <th colspan="2">Formulario de Criar Contato</th>
-                </tr>
+        <table  class="card" id="create_form">    
+            <tr class="card-content">       
+                <th class="card-title" id="title" colspan="2">Formulario de Criar Contato</th>
+            </tr>
 
-                <tr>
-                    <td><label>Name</label></td>
-                    <td><input name="name" type="text" v-model="newObject.name"></td>
-                </tr>    
-   
+            <tr class="card-content">
+                <td><label class="label">Name</label></td>
+                <td><input class="input is-primary" name="name" type="text" placeholder="Name" v-model="newObject.name"></td>
+            </tr>    
 
-                <tr>
-                    <td><label>Email</label></td>
-                    <td><input name="email" type="text" v-model="newObject.email"></td>
-                </tr>    
 
-                <tr>       
-                    <td><label>User_id</label> </td>
-                    <td><input name="number" type="number" v-model="newObject.user_id"></td>    
-                </tr> 
+            <tr class="card-content">
+                <td><label class="label">Email</label></td>
+                <td><input class="input is-primary" name="email" type="email" placeholder="Email" v-model="newObject.email"></td>
+            </tr>    
 
-                <tr>       
-                    <td><label>Details</label> </td>
-                    <td><input name="text" type="text" v-model="newObject.details"></td>    
-                </tr> 
+            <tr class="card-content">       
+                <td><label class="label">Details</label> </td>
+                <td><input class="input is-primary" name="details" type="text" placeholder="Details" v-model="newObject.details"></td>    
+            </tr> 
 
-                <button id="btn" @click="submitForm()">Criar Contato!</button><br><br>
-                <button id="btn" @click="ShowList">Back</button>
-            </table><br>
-        </form>
+            <tr class="card-content">       
+                <td><label class="label">Phone</label> </td>
+                <td><input class="input is-primary" v-mask="['(##) #####-####']" placeholder="(##) #####-####" v-model="newObject.phone"></td>    
+            </tr> 
+            <br>
+            <br>
+            <button  class="button is-primary" id="button" @click="submitForm()">Criar Contato!</button><br><br>
+            <button  class="button is-primary" id="button" @click="showList">Back</button>
+        </table><br>
     </div>
 
 </template>
 
 <script>
 import axios from 'axios';
+import {TheMask} from 'vue-the-mask';
     export default{
         name: 'ContactsForm',
 
@@ -45,8 +45,8 @@ import axios from 'axios';
                 newObject: {
                     name: '',
                     email: '',
-                    user_id: '',
-                    details: ''
+                    details: '',
+                    phone:''
                 }
             }
         },
@@ -61,7 +61,7 @@ import axios from 'axios';
                 axios.post('/api/v1/contacts', {contact: this.newObject})
                 .then(response => {window.location = '/contacts', console.log(response) })
             },
-            ShowList: function (event) {
+            showList: function () {
                 window.location = '/contacts'
             } 
         },
@@ -69,37 +69,15 @@ import axios from 'axios';
 </script>
 
 <style>
-    #create_form {	
-        background:#4f4f4f;	
-        font:12px arial, verdana, helvetica, sans-serif;	
-        border-top:8px solid #cfcfcf;
-        border-left:8px solid #cfcfcf;	
-        border-right:8px solid #696969;
-        border-bottom:8px solid #696969;
-        border-collapse:collapse;
-        color:#ff9900;	
-        width: 400px;
-        height: 10px;
-        align-items: center;
-        margin: auto;
-    }
-    #create_form th {
-        background:#000000;
-        padding:3px;
-        font: bold 15px arial, verdana, helvetica, sans-serif;	
-        border-bottom:1px solid #ff9900;	
-    }
-    #create_form td {	
-        padding:3px;	
-    }
-    #login_form input {	
-        background:#b5b5b5;	
-        border:1px dashed #ff9900;	
-    }
-
-    #btn {	
-        background:#000000;	
-        color:#ffffff;
-        border:2px solid #ffffff;
-    }	
+.card{
+    width: 800px;
+    margin: 30px;
+}
+.content table{
+    width: 800px;
+}
+#title{
+    background: rgb(17, 236, 200);
+    color: white;
+}
 </style>

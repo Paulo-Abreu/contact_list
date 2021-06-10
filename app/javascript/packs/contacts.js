@@ -1,5 +1,7 @@
+import 'bulma/css/bulma.css';
 import Vue from 'vue';
-import Main from '../components/Main/Main'
+import VueTheMask from 'vue-the-mask';
+import Main from '../components/Main/Main';
 const parseData = (prop) => {
     try {
       return JSON.parse(prop);
@@ -7,7 +9,7 @@ const parseData = (prop) => {
       return prop;
     }
   };
-
+Vue.use(VueTheMask)
 const init = () => {
   const element = document.getElementById('contacts');
   if (element !== null) {

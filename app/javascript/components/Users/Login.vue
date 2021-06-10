@@ -53,37 +53,3 @@
 </script>
 
 <style>
-#login_form {	
-        background:#4f4f4f;	
-        font:12px arial, verdana, helvetica, sans-serif;	
-        border-top:8px solid #cfcfcf;
-        border-left:8px solid #cfcfcf;	
-        border-right:8px solid #696969;
-        border-bottom:8px solid #696969;
-        border-collapse:collapse;
-        color:#ff9900;	
-        width: 400px;
-        height: 10px;
-        align-items: center;
-        margin: auto;
-}
-#login_form th {
-    background:#000000;
-    padding:3px;
-    font: bold 15px arial, verdana, helvetica, sans-serif;	
-    border-bottom:1px solid #ff9900;	
-}
-#login_form td {	
-    padding:3px;	
-}
-#login_form input {	
-    background:#b5b5b5;	
-    border:1px dashed #ff9900;	
-}
-
-#btn {	
-    background:#000000;	
-    color:#ffffff;
-    border:2px solid #ffffff;
-}	
-</style>

@@ -1,25 +1,19 @@
 <template>
-    <div>
-        <p>
-        <strong>Name:</strong>
-            {{this.data.name}}
-        </p>
-
-        <p>
-        <strong>Email:</strong>
-            {{this.data.email}}
-        </p>
-
-        <p>
-        <strong>User ID:</strong>
-            {{this.data.user_id}}
-        </p>
-        <p>
-        <strong>Details:</strong>
-            {{this.data.details}}
-        </p>
-        <button @click="ShowList">Back</button>
+    <div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+      </div>
+      <div class="media-content">
+        <p class="title is-4">Name: {{this.data.name}}</p>
+        <p class="title is-4">Email: {{this.data.email}}</p>
+        <p class="title is-4">Details: {{this.data.details}}</p>
+        <br>
+        <button class="button is-primary" @click="ShowList">Back</button>
+      </div>
     </div>
+  </div>
+</div>
 </template>
 
 <script>

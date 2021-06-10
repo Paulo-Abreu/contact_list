@@ -2,6 +2,7 @@ module Api::V1
     class ContactsController < Api::BaseController
         def create
             contact = Contact.new(contact_params)
+            contact.user = current_user
             if contact.save
                 render json: contact, status: 201
             else
@@ -20,7 +21,7 @@ module Api::V1
 
         private
         def contact_params
-            params.require(:contact).permit(:name, :email, :user_id, :details)
+            params.require(:contact).permit(:name, :email, :user_id, :details, :phone )
         end
         def view_contact
             @contact = Contact.find(params[:id])
