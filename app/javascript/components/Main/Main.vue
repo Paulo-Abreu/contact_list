@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="wrapper">
-    <div class="dashboard">
+    <div>
         <div class="main-panel">
           <div class="content">
             <header>
@@ -19,7 +19,9 @@
                 </div>
               </nav>
             </header>
-            <component :is="loadComponent" :data="componentData" />
+            <div class="dashboard">
+             <component :is="loadComponent" :data="componentData" />
+            </div>
           </div>
         </div>
     </div>
@@ -72,11 +74,6 @@ export default {
 </script>
 
 <style>
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-}
 .main-panel {
     position: relative;
     float: right;
@@ -94,5 +91,10 @@ export default {
     margin-top: 80px;
     padding: 30px 15px;
     min-height: calc(100vh - 123px);
+}
+
+.dashboard {
+  width: 80%;
+  margin: auto;
 }
 </style>
