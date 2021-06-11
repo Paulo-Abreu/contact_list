@@ -1,7 +1,6 @@
 class ContactsController < ApplicationController
     before_action :view_contact, only: %i[ show edit ]
     def index
-        @contacts = Contact.all.map{|contact| contact.as_json}
         @contacts = current_user.contacts
         @props = {
             component_name: 'list',

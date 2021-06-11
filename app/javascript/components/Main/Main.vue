@@ -81,7 +81,6 @@ export default {
     transition: .33s,cubic-bezier(.685,.0473,.346,1);
   }
   .content {
-    width: 100%;
     /* padding-right: 15px; */
     padding-left: 15px;
     margin-right: auto;

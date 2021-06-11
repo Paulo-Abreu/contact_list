@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :contacts, only: [:create, :update]
+      resources :contacts, only: [:create, :update, :index]
       resources :users, only: [:create, :update]
       post '/login', to: 'users#login'
       get '/signup', to: 'users#create'

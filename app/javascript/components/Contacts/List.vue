@@ -8,10 +8,13 @@
                             <div class="header-content">
                                 <div class="media-left">
                                     <h4 class="card-title mt-0">Contatos</h4>
-                                    <p class="card-category">Gerenciamento dos Clientes</p>
+                                    <p class="card-category">Gerenciamento dos Contatos</p>
                                 </div>
                                 <div>
-                                    <button class="button is-success" @click="newClient()">Novo Cadastro</button>
+                                    <input type="search" v-model="mySearch" class="input is-primary" placeholder="Search by name" />                                
+                                </div>
+                                <div>
+                                    <button class="button is-success" @click="createContact()">Novo Cadastro</button>
                                 </div>
                             </div>
                         <!-- </div> -->
@@ -43,7 +46,6 @@
 
                                     </tr>
                                     <br>
-                                    <button class="button is-light" @click="createContact()">Create new</button>
                                 </tbody>
                             </table>
                         </div>
@@ -55,12 +57,14 @@
 </template>
 
 <script>
+import axios from 'axios';
     export default {
         name: 'List',
 
         data(){
             return{
                 contacts: [],
+                mySearch: ''
             }
         },
         props: {
@@ -82,8 +86,21 @@
             },
             createContact: function (event) {
                 window.location = '/contacts/new'
-            }
+            },
+            getContacts(name) {
+                axios.get('/api/v1/contacts?filter=' + name + '&fields=id,name,phone,email,details,user_id')
+                .then(response => {
+                this.contacts = response.data
+                })
+            },
         },
+        watch:{
+            mySearch: function(val, oldVal) {
+                if(val.length > 2) {
+                    this.getContacts(val)
+                }
+            },
+        }
     }
 
 </script>

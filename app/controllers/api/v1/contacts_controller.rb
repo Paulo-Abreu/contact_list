@@ -9,6 +9,15 @@ module Api::V1
                 render json: contact.errors.messages, status: 422
             end
         end
+
+        def index
+            @contacts = current_user.contacts
+                .where("name like ?", "%#{params[:filter]}%")
+                .select(params[:fields]).as_json
+
+            render json: @contacts, status: 200
+
+        end
               
         def update 
             @contact = Contact.find(params[:id])
