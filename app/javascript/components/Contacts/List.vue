@@ -4,11 +4,17 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card-content">
-                        <div class="media">
-                            <div class="media-left">
-                                <h4 class="card-title mt-0">Contatos</h4>
+                        <!-- <div class="media"> -->
+                            <div class="header-content">
+                                <div class="media-left">
+                                    <h4 class="card-title mt-0">Contatos</h4>
+                                    <p class="card-category">Gerenciamento dos Clientes</p>
+                                </div>
+                                <div>
+                                    <button class="button is-success" @click="newClient()">Novo Cadastro</button>
+                                </div>
                             </div>
-                        </div>
+                        <!-- </div> -->
                         <div class="card-body">
 
                         </div>
