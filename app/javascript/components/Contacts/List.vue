@@ -43,10 +43,10 @@
                                         <td>{{contact.phone}}</td>
                                         <td><button class="button is-light" @click="showContact(contact.id)">Show</button></td>
                                         <td><button class="button is-light" @click="editContact(contact.id)">Edit</button></td>
-
                                     </tr>
                                     <br>
                                 </tbody>
+                                <button class="button is-primary" @click="showReports">Reports</button>
                             </table>
                         </div>
                     </div>
@@ -80,6 +80,9 @@ import axios from 'axios';
         methods: {
             showContact: function (id) {
                 window.location = '/contacts/' + id
+            },
+            showReports: function (event) {
+                window.location = '/reports'
             },
             editContact: function (id) {
                 window.location = '/contacts/' + id + '/edit'

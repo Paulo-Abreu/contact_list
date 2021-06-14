@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :welcome, only: [:index]
   resources :users, only: [:new, :show, :edit]
   resources :contacts, only: [:index, :show, :edit, :new]
+  resources :reports, only: [:index]
+  get '/reports', to: 'reports#index'
   get '/login', to: 'users#login'
   get '/signup', to: 'users#create'
 
@@ -15,5 +17,4 @@ Rails.application.routes.draw do
       get '/signup', to: 'users#create'
     end
   end
-
 end

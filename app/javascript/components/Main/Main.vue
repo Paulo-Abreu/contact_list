@@ -37,7 +37,7 @@ import ShowContact from '../Contacts/ShowContact';
 import UpdateContact from '../Contacts/UpdateContact';
 import Login from '../Users/Login';
 import CreateUser from '../Users/CreateUser';
-
+import Reports from '../Reports/Reports.vue';
 const componentDicionary = {
   home: Home,
   list: List,
@@ -46,13 +46,14 @@ const componentDicionary = {
   update_contact: UpdateContact,
   login: Login,
   create_user: CreateUser,
+  reports: Reports,
 };
 
 export default {
   name: 'Main',
 
   components: {
-    Home, List, ContactsForm, ShowContact, UpdateContact, Login, CreateUser
+    Home, List, ContactsForm, ShowContact, UpdateContact, Login, CreateUser, Reports
   },
 
   props: {
