@@ -32,11 +32,14 @@
                                         <td>{{total_contacts}}</td>
                                         <td>{{total_users}}</td>
                                         <td>{{round}}</td>
-                                        <td>{{last_contacts}}</td>
                                         <td>{{last_users}}</td>
+                                        <td>{{last_contacts}}</td>
                                     </tr>
                                     <br>
                                 </tbody>
+                                <div>
+                                    <VueApexCharts width="500" type="donut" :options="options" :series="series"></VueApexCharts>                                
+                                </div>
                                 <button class="button is-primary" @click="showList">Back</button>
                             </table>
                         </div>
@@ -49,18 +52,26 @@
 
 
 <script>
-
+import VueApexCharts from 'vue-apexcharts';
   export default {
 
     name: 'Reports',
+
+    components: {VueApexCharts},
+
     data () {
       return {
           total_contacts: [],
           total_users: [],
           last_contacts: [],
           last_users: [],
-          round: []
+          round: [],
+          options: {
+              labels: []
+          },
+                series: []
       }
+
     },
     
     props:{
@@ -76,6 +87,18 @@
         this.last_contacts = this.data[0].last_contacts
         this.last_users = this.data[0].last_users
         this.round = this.data[0].round
+        this.series[0] = this.data[0].total_contacts
+        this.series[1] = this.data[0].total_users
+        this.series[2] = this.data[0].last_users
+        this.series[3] = this.data[0].last_contacts
+        this.options.labels[0] = 'Total de Contatos'
+        this.options.labels[1] = 'Total de Users'
+        this.options.labels[2] = 'Usuarios nos ultimos 7 dias'
+        this.options.labels[3] = 'Contatos nos ultimos 7 dias'
+
+
+        
+
     },
     methods: {
         showList: function () {

@@ -2,6 +2,7 @@ import 'bulma/css/bulma.css';
 import Vue from 'vue';
 import VueTheMask from 'vue-the-mask';
 import Main from '../components/Main/Main';
+import VueApexCharts from 'vue-apexcharts';
 const parseData = (prop) => {
     try {
       return JSON.parse(prop);

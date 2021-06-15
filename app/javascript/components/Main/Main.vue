@@ -38,6 +38,8 @@ import UpdateContact from '../Contacts/UpdateContact';
 import Login from '../Users/Login';
 import CreateUser from '../Users/CreateUser';
 import Reports from '../Reports/Reports.vue';
+import VueApexCharts from 'vue-apexcharts';
+
 const componentDicionary = {
   home: Home,
   list: List,
