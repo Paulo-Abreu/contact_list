@@ -10,7 +10,7 @@
                   <div class="navbar-end">
                     <div class="navbar-item">
                       <div class="buttons">
-                        <a class="button is-danger">
+                        <a @click="logout()" class="button is-danger">
                           <strong>Log out</strong>
                         </a>
                       </div>
@@ -19,6 +19,7 @@
                 </div>
               </nav>
             </header>
+            <Sidebar />
             <div class="dashboard">
              <component :is="loadComponent" :data="componentData" />
             </div>
@@ -38,8 +39,7 @@ import UpdateContact from '../Contacts/UpdateContact';
 import Login from '../Users/Login';
 import CreateUser from '../Users/CreateUser';
 import Reports from '../Reports/Reports.vue';
-import VueApexCharts from 'vue-apexcharts';
-
+import Sidebar from '../Sidebar/Sidebar.vue';
 const componentDicionary = {
   home: Home,
   list: List,
@@ -49,13 +49,14 @@ const componentDicionary = {
   login: Login,
   create_user: CreateUser,
   reports: Reports,
+  sidebar: Sidebar,
 };
-
+import axios from 'axios';
 export default {
   name: 'Main',
 
   components: {
-    Home, List, ContactsForm, ShowContact, UpdateContact, Login, CreateUser, Reports
+    Home, List, ContactsForm, ShowContact, UpdateContact, Login, CreateUser, Reports, Sidebar,
   },
 
   props: {
@@ -64,7 +65,7 @@ export default {
       required: true,
     },
     componentData: {
-      type: Array,
+      type: Array
     }
   },
 
@@ -72,7 +73,12 @@ export default {
     loadComponent() {
       return componentDicionary[this.componentName]
     }
-  }
+  },
+  methods: {
+    logout: function (event) {
+      window.location = '/users/sign_in'
+    }
+  },
 }
 </script>
 

@@ -10,6 +10,11 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'contacts' %>
     <%= javascript_pack_tag 'contacts', 'data-turbolinks-track': 'reload' %>
+    <% if user_signed_in? %>
+      <li>
+      <%= link_to('Logout', destroy_user_session_path, method: :delete)%>        
+      </li>
+    <% end %>
   </head>
 
   <body>

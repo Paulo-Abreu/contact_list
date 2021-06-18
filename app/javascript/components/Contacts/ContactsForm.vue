@@ -69,10 +69,6 @@ import {TheMask} from 'vue-the-mask';
 </script>
 
 <style>
-/* .card{
-    width: 800px;
-    margin: 30px;
-} */
 .content table{
     width: 800px;
 }

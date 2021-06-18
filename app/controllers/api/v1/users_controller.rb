@@ -3,7 +3,8 @@ module Api::V1
         def create
             user = User.new(user_params)
             if user.save
-                render json: user, status: 201
+                UserMailer.with(user: user).weekly_summary.deliver_now                
+                render json: user, status: 201, notice: 'Signed Up sucessfully'
             else
                 render json: user.errors.messages, status: 422
             end

@@ -1,5 +1,6 @@
 class ReportsController < ApplicationController
     def index
+        authorize! :read, Contact
         @props = {
             component_name: 'reports',
             component_data:[{ 

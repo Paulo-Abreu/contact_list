@@ -14,7 +14,7 @@
                                     <input type="search" v-model="mySearch" class="input is-primary" placeholder="Search by name" />                                
                                 </div>
                                 <div>
-                                    <button class="button is-success" @click="createContact()">Novo Cadastro</button>
+                                    <button class="button is-primary" @click="createContact()">Novo Cadastro</button>
                                 </div>
                             </div>
                         <!-- </div> -->

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: "welcome#index"
+  devise_for :users, controllers: {    
+    sessions: 'users/sessions',    
+    registrations: 'users/registrations'    
+  }  
+  root to: "contacts#index"
   resources :welcome, only: [:index]
   resources :users, only: [:new, :show, :edit]
   resources :contacts, only: [:index, :show, :edit, :new]

@@ -2,42 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body {
-    margin: 0;
+    margin: auto;
     font-family: Roboto,Helvetica,Arial,sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
-    text-align: left;
-   //  background-color: #fafafa;
-    // background-color: #eee;
+    text-align: center;
+   
   }
- 
   a {
     text-decoration: none;
      background-color: transparent;
   }
- 
- //  @media (min-width: 992px) {
- //   .col-lg-3 {
- //     flex: 0 0 25%;
- //     max-width: 25%;
- //   }
- //  }
- 
- //  @media (min-width: 768px) {
- //   .col-md-6 {
- //     flex: 0 0 50%;
- //     max-width: 50%;
- //   }
- //  }
- 
- //  @media (min-width: 576px) {
- //   .col-sm-6 {
- //     flex: 0 0 50%;
- //     max-width: 50%;
- //   }
- //  }
  
   .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-auto, .col-lg, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-auto, .col-md, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md-auto, .col-sm, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-auto {
    position: relative;
@@ -55,7 +32,6 @@ body {
  }
  
  input[type=text], input[type=number], input[type=password], input[type=email], select {
-   width: 100%;
    padding: 12px 20px;
    margin: 8px 0;
    display: inline-block;
@@ -65,12 +41,11 @@ body {
  }
  
  input[type=submit] {
-   width: 100%;
+   text-align: center;
    background-color: #4CAF50;
    color: white;
    padding: 14px 20px;
-   margin: 8px 0;
-   border: none;
+   border: 2px;
    border-radius: 4px;
    cursor: pointer;
  }
@@ -78,13 +53,7 @@ body {
  input[type=submit]:hover {
    background-color: #45a049;
  }
- 
- // @media (min-width: 768px) {
- // .col-md-12 {
- //     flex: 0 0 100%;
- //     max-width: 100%;
- // }
- // }
+
  .row {
    display: flex;
    flex-wrap: wrap;
@@ -116,7 +85,7 @@ body {
  .signup-container .signup-form input[type="text"], .signup-container .signup-form input[type="password"],
  .signup-container .signup-form input[type="number"], .signup-container .signup-form input[type="email"] {
      border-radius: 3px;
-     border: none;
+     border: 2px;
      color: #333333;
      font-size: 16px;
      height: 16px;
@@ -134,8 +103,8 @@ body {
  
    .signup-container .signup-form .btn-register {
      background-color: #00BBFF;
-     border-color: #00BBFF;
-     border-width: 0;
+     border-color: black;
+     border-width: 2px;
      color: #FFFFFF;
      display: block;
      margin: 0 auto;
@@ -169,7 +138,7 @@ body {
    letter-spacing: 0;
    cursor: pointer;
    background-color: transparent;
-   border: 0;
+   border: 2px;
    border-radius: .2rem;
    transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1);
    will-change: box-shadow,transform;
@@ -211,4 +180,21 @@ body {
      pointer-events: none;
      transition: all .3s ease;
  }
+
+ .field{
+   text-align: center;
+   margin: auto;
+ }
+
+ .login-form{
+    width: 30%;
+    border-width: 1px;
+    border: 1px solid black;
+    margin-left: 100px;
+    box-shadow: 3px 3px 3px black;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+
  
