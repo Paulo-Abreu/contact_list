@@ -40,6 +40,7 @@ import Login from '../Users/Login';
 import CreateUser from '../Users/CreateUser';
 import Reports from '../Reports/Reports.vue';
 import Sidebar from '../Sidebar/Sidebar.vue';
+import Favorites from '../Favorites/Favorites.vue';
 const componentDicionary = {
   home: Home,
   list: List,
@@ -50,13 +51,14 @@ const componentDicionary = {
   create_user: CreateUser,
   reports: Reports,
   sidebar: Sidebar,
+  favorites: Favorites,
 };
 import axios from 'axios';
 export default {
   name: 'Main',
 
   components: {
-    Home, List, ContactsForm, ShowContact, UpdateContact, Login, CreateUser, Reports, Sidebar,
+    Home, List, ContactsForm, ShowContact, UpdateContact, Login, CreateUser, Reports, Sidebar, Favorites,
   },
 
   props: {

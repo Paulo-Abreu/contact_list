@@ -30,7 +30,7 @@
                                     <th>User ID</th>
                                     <th>Details</th>
                                     <th>Phone</th>
-                                    <th colspan="2"></th>
+                                    <th colspan="3"></th>
                                     </tr>
                                 </thead>
 
@@ -43,6 +43,8 @@
                                         <td>{{contact.phone}}</td>
                                         <td><button class="button is-light" @click="showContact(contact.id)">Show</button></td>
                                         <td><button class="button is-light" @click="editContact(contact.id)">Edit</button></td>
+                                        <td><button class="button is-light" @click="addFavorite(contact.id)"><i class="far fa-star"></i></button></td>
+
                                     </tr>
                                     <br>
                                 </tbody>
@@ -60,7 +62,6 @@
 import axios from 'axios';
     export default {
         name: 'List',
-
         data(){
             return{
                 contacts: [],
@@ -72,7 +73,6 @@ import axios from 'axios';
                 type: Array
             }
         },
-
         mounted() {
             console.log("aqui",this.data)
             this.contacts = this.data
@@ -95,6 +95,10 @@ import axios from 'axios';
                 .then(response => {
                 this.contacts = response.data
                 })
+            },
+            addFavorite: function (id) {
+                axios.post('/api/v1/favorites', {favorite_id: id})
+                .then(response => {window.location = '/favorites', console.log(response) })  
             },
         },
         watch:{
